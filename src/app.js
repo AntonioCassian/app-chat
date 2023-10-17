@@ -1,6 +1,12 @@
 import { resolve } from 'path';
 import express from 'express';
-import index from './routes/index';
+import dotenv from 'dotenv';
+
+import userRoutes from './routes/userRoutes';
+
+import './database';
+
+dotenv.config();
 
 class App {
   constructor() {
@@ -16,7 +22,7 @@ class App {
   }
 
   routes() {
-    this.app.use('/', index);
+    this.app.use('/user', userRoutes);
   }
 }
 

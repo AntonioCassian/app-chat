@@ -1,9 +1,9 @@
 import { Router } from 'express';
+import userController from '../controllers/UserController';
 
 const router = new Router();
 
-router.get('/', (req, res) => {
-  res.send('HELLOW WORD!');
-});
+router.get('/', userController.index);
+router.post('/', userController.store);
 
 export default router;
