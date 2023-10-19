@@ -3,6 +3,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 
 import userRoutes from './routes/userRoutes';
+import photoRoutes from './routes/photoRoutes';
 
 import './database';
 
@@ -23,6 +24,7 @@ class App {
 
   routes() {
     this.app.use('/user', userRoutes);
+    this.app.use('/photo', photoRoutes);
   }
 }
 

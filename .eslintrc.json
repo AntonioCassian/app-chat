@@ -11,6 +11,9 @@
     "rules": {
       "no-console": "off",
       "class-methods-use-this": "off",
-      "no-param-reassign": "off"
+      "no-param-reassign": "off",
+      "consistent-return": "off",
+      "no-named-as-default": "off",
+      "camelcase": "off"
     }
 }

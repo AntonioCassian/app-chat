@@ -1,4 +1,5 @@
 import User from '../models/User';
+// import Photo from '../models/Photo';
 
 class UserController {
   async store(req, res) {
@@ -15,10 +16,12 @@ class UserController {
 
   async index(req, res) {
     try {
-      const users = await User.findAll({ attributes: ['id', 'username', 'email'] });
+      const users = await User.findAll({
+        attributes: ['id', 'username', 'email'],
+      });
       return res.json(users);
     } catch (e) {
-      return res.json(null);
+      console.log(e);
     }
   }
 
