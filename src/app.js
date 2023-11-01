@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 
 import userRoutes from './routes/userRoutes';
 import photoRoutes from './routes/photoRoutes';
+import chatRoutes from './routes/chatRoutes';
 
 import './database';
 
@@ -25,6 +26,7 @@ class App {
   routes() {
     this.app.use('/user', userRoutes);
     this.app.use('/photo', photoRoutes);
+    this.app.use('/chat', chatRoutes);
   }
 }
 
