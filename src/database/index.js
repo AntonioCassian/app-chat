@@ -2,9 +2,9 @@ import Sequelize from 'sequelize';
 import dataBaseConfig from '../config/database';
 import User from '../models/User';
 import Photo from '../models/Photo';
-import Chat from '../models/Chat';
+import Message from '../models/Message';
 
-const models = [User, Photo, Chat];
+const models = [User, Photo, Message];
 
 const connection = new Sequelize(dataBaseConfig);
 

@@ -1,6 +1,6 @@
 import Sequelize, { Model } from 'sequelize';
 
-export default class Chat extends Model {
+export default class Messag extends Model {
   static init(sequelize) {
     super.init(
       {

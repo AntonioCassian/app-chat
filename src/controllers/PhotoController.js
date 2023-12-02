@@ -13,7 +13,6 @@ class PhotoController {
           errors: [error],
         });
       }
-
       try {
         const { originalname, filename } = req.file;
         const { user_id } = req.body;

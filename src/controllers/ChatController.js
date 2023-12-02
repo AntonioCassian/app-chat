@@ -1,6 +1,6 @@
 import multer from 'multer';
 import multerConfig from '../config/multerConfig';
-import Chat from '../models/Chat';
+import Chat from '../models/Message';
 
 const message = multer(multerConfig).single('chat');
 

@@ -69,7 +69,7 @@ export default class User extends Model {
     return bcryptjs.compare(password, this.password_hash);
   }
 
-  static associations(models) {
-    this.hasMany(models.Photo, models.Chat, { foreignKey: ['user_id', 'user_idm'] });
+  static associate(models) {
+    this.hasMany(models.Photo, models.Message, { foreignKey: ['user_id', 'user_idm'] });
   }
 }

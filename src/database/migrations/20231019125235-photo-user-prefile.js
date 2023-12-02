@@ -8,6 +8,14 @@ module.exports = {
         autoIncrement: true,
         primaryKey: true,
       },
+      originalname: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      filename: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
       user_id: {
         type: Sequelize.INTEGER,
         allowNull: true,
@@ -17,14 +25,6 @@ module.exports = {
         },
         onDelete: 'SET NULL',
         onUpdate: 'CASCADE',
-      },
-      originalname: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      filename: {
-        type: Sequelize.STRING,
-        allowNull: false,
       },
       created_at: {
         type: Sequelize.DATE,
