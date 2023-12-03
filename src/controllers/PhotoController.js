@@ -20,7 +20,7 @@ class PhotoController {
         res.json(photo);
       } catch (err) {
         return res.status(400).json({
-          errors: 'User not exists',
+          errors: ['User not exists'],
         });
       }
     });

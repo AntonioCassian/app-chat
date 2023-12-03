@@ -1,6 +1,5 @@
-/* eslint-disable import/no-extraneous-dependencies */
-import { extname, resolve } from 'path';
 import multer from 'multer';
+import { extname, resolve } from 'path';
 
 const aleatory = () => Math.floor(Math.random() * 10000 + 1000);
 
