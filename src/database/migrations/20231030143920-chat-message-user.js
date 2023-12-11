@@ -14,6 +14,7 @@ module.exports = {
       },
       user_idm: {
         type: Sequelize.INTEGER,
+        allowNull: false,
         references: {
           model: 'users',
           key: 'id',
