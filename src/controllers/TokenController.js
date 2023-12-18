@@ -1,5 +1,6 @@
 import jwt from 'jsonwebtoken';
 import User from '../models/User';
+import Photo from '../models/Photo';
 
 class TokenController {
   async store(req, res) {
@@ -28,6 +29,29 @@ class TokenController {
       expiresIn: process.env.TOKEN_EXPIRATION,
     });
     return res.json({ token, user });
+  }
+
+  async index(req, res) {
+    try {
+      // const userId = await User.findByPk(req.params.id);
+      const user = await User.findByPk(req.userId, {
+        attributes: ['id', 'username', 'email'],
+        order: [['id', 'DESC'], [Photo, 'id', 'DESC']],
+        include: {
+          model: Photo,
+          attributes: ['url', 'filename'],
+        },
+      });
+
+      if (!user) {
+        return res.status(400).json({
+          errors: ['not exist user!'],
+        });
+      }
+      return res.json({ user });
+    } catch (err) {
+      console.log(err);
+    }
   }
 }
 
