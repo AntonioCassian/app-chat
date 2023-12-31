@@ -8,6 +8,7 @@ import userRoutes from './routes/userRoutes';
 import photoRoutes from './routes/photoRoutes';
 import chatRoutes from './routes/chatRoutes';
 import tokenRoutes from './routes/tokenRoutes';
+import contactRoutes from './routes/contactRoutes';
 
 import './database';
 
@@ -51,6 +52,7 @@ class App {
     this.app.use('/photo', photoRoutes);
     this.app.use('/chat', chatRoutes);
     this.app.use('/tokens', tokenRoutes);
+    this.app.use('/contacts', contactRoutes);
   }
 }
 

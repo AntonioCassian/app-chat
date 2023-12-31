@@ -70,6 +70,6 @@ export default class User extends Model {
   }
 
   static associate(models) {
-    this.hasMany(models.Photo, models.Message, { foreignKey: ['user_id', 'user_idm'] });
+    this.hasMany(models.Photo, models.Message, models.Contact, { foreignKey: ['user_id', 'user_idm', 'userCid'] });
   }
 }

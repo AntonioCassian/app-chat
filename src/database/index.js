@@ -3,8 +3,9 @@ import dataBaseConfig from '../config/database';
 import User from '../models/User';
 import Photo from '../models/Photo';
 import Message from '../models/Message';
+import Contact from '../models/Contact';
 
-const models = [User, Photo, Message];
+const models = [User, Photo, Message, Contact];
 
 const connection = new Sequelize(dataBaseConfig);
 
