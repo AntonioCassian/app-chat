@@ -2,26 +2,10 @@ import multer from 'multer';
 import multerConfig from '../config/multerConfig';
 import Chat from '../models/Message';
 import User from '../models/User';
-import { io } from '../http';
 
 const message = multer(multerConfig).single('chat');
 
 class ChateController {
-  messageIo() {
-    io.on('connection', (socket) => {
-      console.log(`Usuário conectado ${socket}`);
-
-      socket.on('chat message', (msg) => {
-        console.log('Mensagem recebida:', msg);
-        io.emit('cyhat message', msg);
-      });
-
-      socket.on('disconnect', () => {
-        console.log('Usuário desconectado');
-      });
-    });
-  }
-
   store(req, res) {
     return message(req, res, async (error) => {
       if (error) {
@@ -39,7 +23,7 @@ class ChateController {
         }
         const chatMessage = await Chat.create({ chat, user_idm });
 
-        io.emit('newMessage', chatMessage);
+        // io.to(user_idm).emit('newMessage', chatMessage);
 
         return res.json(chatMessage);
       } catch (e) {

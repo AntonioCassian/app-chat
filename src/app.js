@@ -3,6 +3,8 @@ import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import dotenv from 'dotenv';
+import { createServer } from 'http';
+import { Server } from 'socket.io';
 
 import userRoutes from './routes/userRoutes';
 import photoRoutes from './routes/photoRoutes';
@@ -35,6 +37,8 @@ const corsOptions = {
 class App {
   constructor() {
     this.app = express();
+    this.server = createServer(this.app);
+    this.io = new Server(this.server);
     this.middlewares();
     this.routes();
   }
